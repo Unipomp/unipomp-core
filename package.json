@@ -2,7 +2,7 @@
   "name": "@unipomp/core",
   "description": "🎛 Core contracts for the Unipomp protocol",
   "version": "1.0.0",
-  "homepage": "https://unipomp.org",
+  "homepage": "https://unipomp.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/Unipomp/unipomp-core"
