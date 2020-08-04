@@ -1,7 +1,7 @@
 {
   "name": "@unipomp/core",
   "description": "🎛 Core contracts for the Unipomp protocol",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "homepage": "https://unipomp.org",
   "repository": {
     "type": "git",
