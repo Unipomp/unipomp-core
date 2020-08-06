@@ -4,7 +4,7 @@ import { MaxUint256 } from 'ethers/constants'
 import { bigNumberify, hexlify, keccak256, defaultAbiCoder, toUtf8Bytes } from 'ethers/utils'
 import { solidity, MockProvider, deployContract } from 'ethereum-waffle'
 import { ecsign } from 'ethereumjs-util'
-import {ethers} from 'ethers'
+import { ethers } from 'ethers'
 import { expandTo18Decimals, getApprovalDigest } from './shared/utilities'
 
 import ERC20 from '../build/contracts/ERC20.json'
@@ -16,9 +16,9 @@ const TEST_AMOUNT = expandTo18Decimals(10)
 
 describe('UnipompERC20', () => {
   const provider = new MockProvider({
-        hardfork: 'istanbul',
-        mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
-        gasLimit: 9999999
+    hardfork: 'istanbul',
+    mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
+    gasLimit: 9999999
   })
   const [wallet, other] = provider.getWallets()
 
