@@ -31,10 +31,6 @@ jobs:
           key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ matrix.os }}-yarn-
-            
-            
-      - run: yarn config set registry https://registry.npmjs.org
-      - run: rm yarn.lock
-      - run: yarn
+      - run: yarn install
       - run: yarn lint
       - run: yarn test
