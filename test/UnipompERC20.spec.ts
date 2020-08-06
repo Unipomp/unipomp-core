@@ -7,14 +7,14 @@ import { ecsign } from 'ethereumjs-util'
 import {ethers} from 'ethers'
 import { expandTo18Decimals, getApprovalDigest } from './shared/utilities'
 
-import ERC20 from '../build/ERC20.json'
+import ERC20 from '../build/contracts/ERC20.json'
 
 chai.use(solidity)
 
 const TOTAL_SUPPLY = expandTo18Decimals(10000)
 const TEST_AMOUNT = expandTo18Decimals(10)
 
-describe('UniswapV2ERC20', () => {
+describe('UnipompERC20', () => {
   const provider = new MockProvider({
         hardfork: 'istanbul',
         mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
