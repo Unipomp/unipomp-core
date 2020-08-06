@@ -26,7 +26,7 @@ contract UnipompERC20  {
     event Approval(address indexed owner, address indexed spender, uint value);
     event Transfer(address indexed from, address indexed to, uint value);
 
-    constructor()  {
+    constructor() public  {
         uint chainId;
         assembly {
             chainId := chainid()

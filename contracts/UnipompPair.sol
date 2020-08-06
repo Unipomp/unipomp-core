@@ -61,7 +61,7 @@ contract UnipompPair is UnipompERC20 {
     );
     event Sync(uint112 reserve0, uint112 reserve1);
 
-    constructor() {
+    constructor() public {
         factory = msg.sender;
     }
 
