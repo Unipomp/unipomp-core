@@ -22,9 +22,6 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - run: npm install -g yarn
-
-      - id: yarn-cache
-            
       - run: rm yarn.lock
       - run: yarn
       - run: yarn lint
