@@ -1,5 +1,4 @@
-  
-name: CI
+ame: CI
 
 on:
   push:
@@ -11,8 +10,8 @@ jobs:
   test:
     strategy:
       matrix:
-        node: ['12.16.2']
-        os: [macos-latest]
+        node: ['10.x', '12.x']
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -24,10 +23,15 @@ jobs:
 
       - run: npm install -g yarn
 
+      - id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ matrix.os }}-yarn-
+      - run: yarn install --production=false
 
-            
-      - run: rm yarn.lock
-      - run: yarn
-    
       - run: yarn lint
       - run: yarn test
