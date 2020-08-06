@@ -5,10 +5,11 @@ const { toHex, toWei } = require("web3-utils");
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraProjectId = process.env.INFURA_PROJECT_ID;
 
+
 module.exports = {
 
 
-    plugins: ["truffle-security", "truffle-contract-size", "truffle-plugin-verify"],
+    plugins: ["truffle-contract-size", "verify-on-etherscan"],
     /**
      * Networks define how you connect to your ethereum client and let you set the
      * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -35,12 +36,12 @@ module.exports = {
         skipDryRun: true,
       },
       rinkeby: {
-        provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, "https://rinkeby.infura.io/v3/" + infuraProjectId),
-        networkId: 4,       // Rinkeby's id
+        provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, "https://rinkeby.infura.io/v3/" + infuraProjectId, 1),
+        network_id: 4,       // Rinkeby's id
       },
       mainnet: {
         provider: () => new HDWalletProvider(process.env.MNEMONIC, "https://mainnet.infura.io/v3/" + infuraProjectId),
-        networkId: 1,       // Mainnet id
+        network_id: 1,       // Mainnet id
         gasPrice: 70000000000 // 70 gwei      
       },
       
@@ -71,13 +72,6 @@ module.exports = {
         // network_id: 2111,   // This network is yours, in the cloud.
         // production: true    // Treats this network as if it was a public net. (default: false)
       // }
-    },
-    api_keys: {
-        etherscan: process.env.ETHERSCAN_API_KEY
-    },
-
-    verify: {
-        preamble: "Author: Unipomp.\nVersion: 1.0.1, Uniswap. Version: 1.0.2"
     },
     // Configure your compilers
     compilers: {
