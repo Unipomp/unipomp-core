@@ -32,7 +32,7 @@ jobs:
           key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ matrix.os }}-yarn-
-      - run: yarn
+      - run: npm install
 
       - run: yarn lint
       - run: yarn test
