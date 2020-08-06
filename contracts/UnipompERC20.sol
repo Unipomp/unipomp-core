@@ -5,7 +5,9 @@ pragma solidity 0.7.0;
 import './interfaces/IUniswapV2ERC20.sol';
 import './libraries/SafeMath.sol';
 
-contract UniswapV2ERC20  {
+
+//UniswapV2ERC20
+contract UnipompERC20  {
     using SafeMath for uint;
 
     string public constant name = 'Unipomp LP';
@@ -82,7 +84,7 @@ contract UniswapV2ERC20  {
     }
 
     function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external {
-        require(deadline >= block.timestamp, 'UniswapV2: EXPIRED');
+        require(deadline >= block.timestamp, 'Unipomp: EXPIRED');
         bytes32 digest = keccak256(
             abi.encodePacked(
                 '\x19\x01',
@@ -91,7 +93,7 @@ contract UniswapV2ERC20  {
             )
         );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, 'UniswapV2: INVALID_SIGNATURE');
+        require(recoveredAddress != address(0) && recoveredAddress == owner, 'Unipomp: INVALID_SIGNATURE');
         _approve(owner, spender, value);
     }
 }
