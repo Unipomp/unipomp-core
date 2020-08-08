@@ -1453,10 +1453,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@uniswap/v2-core@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.1.tgz#af8f508bf183204779938969e2e54043e147d425"
-  integrity sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q==
+"@unipomp/core@^1.0.2":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@unipomp/core/-/core-1.0.3.tgz#a97230f4d306fcdc2e49be37af7487607b9f4df9"
+  integrity sha512-htxDHuYoV2TCF7V6rDKIGyIq9yBU2L59I1CuAh4+Vt99kmZSBxmp6xpd7fIF+ituhVsjNf+OtdIfOo9NU1CgCA==
 
 abab@^2.0.0:
   version "2.0.3"
